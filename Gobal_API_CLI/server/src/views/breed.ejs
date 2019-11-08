@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/breed.css">
+</head>
+
+<body>
+    <!-- <h3>ejs</h3> -->
+    <h1 class="h"><%= breed%><% if(flag){%>-All<%}%></h1>
+    <div class="cont">
+        <%dogs.forEach(item => {%>
+        <div class="imgWrap">
+            <div class="imgInner">
+                <h2>Created with CLI at <%= item.cretedTime[0]%></h2>
+                <ul class="it">
+                    <%item[breed].message.forEach(img => { %>
+                    <li><img src="<%= img %>" alt=""></li>
+                    <%})%>
+                </ul>
+            </div>
+        </div>
+    <%})%>
+</div>
+
+</body>
+<script>
+</script>
+</html>

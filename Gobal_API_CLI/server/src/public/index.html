@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid;
+            width: 50%;
+
+        }
+
+        table * {
+            border: 1px solid red;
+            padding: 6px;
+        }
+        .container{
+            margin-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search and save dogs images in cloud store</h1>
+        <table>
+            <tr>
+                <th>Breeds</th>
+                <th>Subbreed</th>
+            </tr>
+            <tr>
+                <th rowspan="3">bulldog</th>
+                <td>english</td>
+            </tr>
+            <tr>
+                <td>french</td>
+            </tr>
+            <tr>
+                <td>boston</td>
+            </tr>
+            <tr>
+                <th>bullterrier</th>
+                <th>[ ]</th>
+            </tr>
+            <tr>
+                <th>chihuahua</th>
+                <th>[ ]</th>
+            </tr>
+            <tr>
+                <th>corgi</th>
+                <td>cardigan</td>
+            </tr>
+        </table>
+        <br><br>
+        <h2>FOR EXAMPLE</h2>
+        <code>ts-node ./src/index.ts add bulldog --count=2</code> <span style="color:red">(count default is 3)</span><br>
+        <span style="font-style: italic;">Aded in breed.json file the cloud store adress where was saved "bulldog's" images which count is "2" regardless of subbred of bulldog</span>
+        <p style="color:red">Or</p>
+        <code>ts-node ./src/index.ts add bulldog english</code>
+        <br>
+        <span style="font-style: italic;">Aded in breed.json file the cloud store adress where was saved "bulldog's" images which count is "3" (Default is 3) and subbred is "english"</span>
+        <br>
+        <h2>After than</h2>
+        <h4>Run in command prompt <code>npm run serv</code></h4>
+        <p>Go to "<code>localhost:3000/bulldog</code>"</p>
+        <p>Go to "<code>localhost:3000/bulldog/english</code>"</p>
+
+    </div>
+    <!-- <button class="btn">click</button> -->
+</body>
+<script src="./script.js"></script>
+
+</html>
