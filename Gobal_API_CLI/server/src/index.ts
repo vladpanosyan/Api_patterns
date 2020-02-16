@@ -2,7 +2,7 @@ import * as yargs from 'yargs';
 import {checkForSubBreed} from './helper';
 
 const brOp: ReadonlyArray<breed> = ['bulldog', 'bullterrier', 'chihuahua', 'corgi']
-const subOP: ReadonlyArray<subBreed> = ['cardigan', 'boston', 'english', 'french']
+const subOP: subBreed[] = ['cardigan', 'boston', 'english', 'french']
 
 yargs.option({
     breed: { choices: brOp, decribe: "Dog breed" },
@@ -15,9 +15,9 @@ const argv = yargs.command({
     aliases: ['a'],
     describe: 'Add dogs into cloud store',
     builder: {
-        count: {type: 'number', default: 4}
+        count: {type: 'number', default: 4} // sa avelacnum e parametr ays tesqov --count=5
     },
-    handler: (argv: any) => { // any poxaren inch type texadrvi ???
+    handler: (argv: any) => { 
         console.log(argv)
         if (argv.subBreed) {
             checkForSubBreed(argv.breed, argv.count, argv.subBreed)

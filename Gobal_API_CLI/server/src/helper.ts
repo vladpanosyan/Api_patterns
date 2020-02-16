@@ -1,4 +1,3 @@
-// import {dogs} from './data'
 import * as path from 'path';
 import * as fs from 'fs'
 import axios from 'axios';
@@ -60,14 +59,9 @@ function useAxiosBreed(url: string, item: breed, subItem: any) {
     });
 }
 
-function checkForSubBreed(item: breed, count: number, subItem?: subBreed) { // any tex@ inch dnem ???
-    // let selectedBreed = dogs[item];
-    // if(selectedBreed.some(item => item === subItem)) {
-        const subItemPAth = subItem ? `${subItem}/` : ``;
-        const url: string =  `https://dog.ceo/api/breed/${item}/${subItemPAth}images/random/${count}`
-    // console.log(url)
-        useAxiosBreed(url, item, subItem)
-
-    // }
+function checkForSubBreed(item: breed, count: number, subItem?: subBreed) {
+  const subItemPAth = subItem ? `${subItem}/` : ``;
+  const url: string =  `https://dog.ceo/api/breed/${item}/${subItemPAth}images/random/${count}`
+  useAxiosBreed(url, item, subItem)
 }
 export {checkForSubBreed}

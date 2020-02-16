@@ -9,8 +9,4 @@ const dogs:DogBreed = {
     corgi: ['cardigan']
 }
 
-// interface DogBreed {
-//     [prop:string]: string[]
-// }
-
 export {dogs}

@@ -13,12 +13,11 @@ app.use((req, response, next) => {
     const url = req.originalUrl.split('/');
     switch(url.length) {
         case 2: {
-            let breed = url[1]
-            const checking: Array<breed> = ['bulldog', 'bullterrier', 'chihuahua', 'corgi'] // chishtem are te che ???
+            let breed = url[1];
+            const checking: Array<breed> = ['bulldog', 'bullterrier', 'chihuahua', 'corgi']; 
             if(checking.includes(breed)) {
-                let files = readJson(`${breed}-All`)
+                let files = readJson(`${breed}-All`);
                 if(files.length) {
-                    // console.log(files)
                     Promise.all(files.map(fetch))
                         .then((res: any) => response.render('breed.ejs', { dogs: res, breed: breed, flag: true }))
                 } else  response.status(404).end(`you need to add dogs( ${breed} ) from command prompt`)
